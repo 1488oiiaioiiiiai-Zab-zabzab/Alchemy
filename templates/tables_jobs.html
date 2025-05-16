@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 align="center">Таблцы с работами</h1>
+    {% for job in jobs %}
+        <h2>Работа № {{ job.id }}</h2>
+        <table>
+            <tr bgcolor="#696969">
+                <td><p align="center">Название работы</p></td>
+                <td><p align="center">Лидер команды</p></td>
+                <td><p align="center">Продолжительность</p></td>
+                <td><p align="center">Список помощников</p></td>
+                <td><p align="center">Закончена ли?</p></td>
+            </tr>
+            <tr bgcolor="#6495ed">
+                <td><p align="center">{{ job.job }}</p></td>
+                <td><p align="center">{{ job.team_leader }}</p></td>
+                <td><p align="center">{{ job.work_size }}</p></td>
+                <td><p align="center">{{ job.collaborators }}</p></td>
+                <td bgcolor="#f08080"><p align="center">{{ job.is_finished }}</p></td>
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

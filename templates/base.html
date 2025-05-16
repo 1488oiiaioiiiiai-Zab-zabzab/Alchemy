@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" 
+            crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous">
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg pt-3 px-2" data-bs-theme="dark" style="background-color: #451804;">
+                <div class="container-fluid">
+                    <!--<h1 class="rezok c-o">Миссия: Всенародная колонизация МАРСА</h1>-->
+                    <!--<h4 class="rezok" style="color: #e77d11;">И На Марсе Будут Яблони Цвести!!!</h4>-->
+                    <a class="navbar-brand" href="#"><h1 class="rezok" style="color: #f0e7e7;">Миссия: Всенародная колонизация МАРСА</h1></a>
+                    <button style="color: #e77d11;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <h4>
+                              <a class="nav-link rezok" style="color: #e77d11;" aria-current="page" href="#" aria-expanded="false">
+                                И На Марсе Будут Яблони Цвести!!!</a>
+                            </h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <h4>
+                              <a class="nav-link rezok" style="color: #c1440e;" aria-current="page" href="/all_links" aria-expanded="false">
+                                Ссылки на все задачи для тестов</a>
+                            </h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main" class="container">
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
