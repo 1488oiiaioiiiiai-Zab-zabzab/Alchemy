@@ -37,10 +37,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <h4>
-                              <a class="nav-link rezok" style="color: #c1440e;" aria-current="page" href="/all_links" aria-expanded="false">
-                                Ссылки на все задачи для тестов</a>
-                            </h4>
+                                {% if current_user.is_authenticated %}
+                                    <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+                                {% else %}
+                                    <p>
+                                        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                                        <a class="btn btn-success" href="/login">Войти</a>
+                                    </p>
+                                {% endif %}
                             </li>
                         </ul>
                     </div>

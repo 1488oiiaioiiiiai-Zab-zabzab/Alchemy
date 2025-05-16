@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1>Добавление работы</h1>
+        {% if message %}
+            <br>
+            <div class="alert alert-danger" role="alert" align="center">
+                <h1>{{ message }}</h1>
+            </div>
+            <br>
+        {% endif %}
+        <p>
+            {{ form.jn.label }}<br>
+            {{ form.jn(class="form-control") }}<br>
+            {% for error in form.jn.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.tl.label }}<br>
+            {{ form.tl(class="form-control") }}<br>
+            {% for error in form.tl.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.ws.label }}<br>
+            {{ form.ws(class="form-control") }}<br>
+            {% for error in form.ws.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.col.label }}<br>
+            {{ form.col(class="form-control") }}<br>
+            {% for error in form.col.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.n.label }}<br>
+            {{ form.n(class="form-control") }}<br>
+            {% for error in form.n.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.c.label }}<br>
+            {{ form.c(class="form-control") }}<br>
+            {% for error in form.c.errors %}
+                <p class="alert alert-danger" role="alert">
+                    какая то фигня {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <label for="rare">Закончена ли?</label>
+        <input type="hidden" name="rare" value="">
+        <input type="checkbox" id="rare" name="rare" value="on"><br><br>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+{% endblock %}
