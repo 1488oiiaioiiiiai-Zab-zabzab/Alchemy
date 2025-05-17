@@ -5,7 +5,7 @@ from data.jobs_py import JobsC
 from data.departments_py import DepartmentC
 from forms.users_forms import RegisterForm, LoginForm
 from forms.job_forms import AddJobForm
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'yandexlyceum_secret_key'
