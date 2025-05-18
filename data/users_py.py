@@ -1,4 +1,6 @@
 import datetime
+from email.policy import default
+
 import sqlalchemy
 from sqlalchemy import orm
 from .db_session import SqlAlchemyBase
@@ -20,6 +22,8 @@ class UserC(SqlAlchemyBase, UserMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
     jobs_orm_rel = orm.relationship("JobsC", back_populates="users_orm_rel")
+    deps_orm_rel = orm.relationship("DepartmentC", back_populates="users_orm_rel")
+    bug = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
 
     def __repr__(self):
         return f"<Colonist> {self.id} {self.surname} {self.name}"

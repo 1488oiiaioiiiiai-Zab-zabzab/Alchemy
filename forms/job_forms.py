@@ -11,4 +11,5 @@ class AddJobForm(FlaskForm):
 
     n = DateTimeField("начало работы 2025-05-12 21:57:54", validators=[DataRequired()], format='%Y-%m-%d %H:%M:%S')
     c = DateTimeField("конец работы 2025-05-12 21:57:54", validators=[DataRequired()], format='%Y-%m-%d %H:%M:%S')
+    f = BooleanField("Завершена ли?")
     submit = SubmitField('Добавить работу')

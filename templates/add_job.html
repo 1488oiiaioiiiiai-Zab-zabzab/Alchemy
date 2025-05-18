@@ -2,7 +2,7 @@
 {% block content %}
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <h1>Добавление работы</h1>
+        <h1>{{ title }}</h1>
         {% if message %}
             <br>
             <div class="alert alert-danger" role="alert" align="center">
@@ -64,9 +64,7 @@
                 </p>
             {% endfor %}
         </p>
-        <label for="rare">Закончена ли?</label>
-        <input type="hidden" name="rare" value="">
-        <input type="checkbox" id="rare" name="rare" value="on"><br><br>
+        <p>{{ form.f() }} {{ form.f.label }}</p>
         <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
     </form>
 {% endblock %}

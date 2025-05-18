@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1><a href="/">Таблицы с работами</a></h1>
+    <h1 align="center">Таблцы с департаментами</h1>
+    {% for job in jobs %}
+        <h2>Департамент № {{ job.id }}</h2>
+        <table>
+            <tr bgcolor="#696969">
+                <td><p align="center">Название департамента</p></td>
+                <td><p align="center">Лидер департамента</p></td>
+                <td><p align="center">Участники</p></td>
+                <td><p align="center">email</p></td>
+            </tr>
+            <tr bgcolor="#6495ed">
+                <td><p align="center">{{ job.title }}</p></td>
+                <td><p align="center">{{ job.chief }}</p></td>
+                <td><p align="center">{{ job.members }}</p></td>
+                <td><p align="center">{{ job.email }}</p></td>
+            </tr>
+            <tr>
+                {% if current_user.is_authenticated and (current_user == job.users_orm_rel or current_user.id == 1) %}
+                    <div>
+                        <a href="/reddep/{{ job.id }}" class="btn btn-warning">
+                            Изменить
+                        </a>
+                        <a href="/deldep/{{ job.id }}" class="btn btn-danger">
+                            Удалить
+                        </a>
+                    </div>
+                {% endif %}
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

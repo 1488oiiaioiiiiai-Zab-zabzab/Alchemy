@@ -14,6 +14,7 @@ class JobsC(SqlAlchemyBase):
     start_date = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
     end_date = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    """creator_id = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)"""
     users_orm_rel = orm.relationship("UserC")
 
     def __repr__(self):
